@@ -23,7 +23,7 @@ const RegisterUser = () => {
   setError('');
   setMessage('');
 
-  const token = localStorage.getItem('token'); // ⬅️ Get the token
+  const token = localStorage.getItem('token'); 
 
   if (!token) {
     setError('Du er ikke logget ind.');
@@ -35,7 +35,7 @@ const RegisterUser = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`, // ⬅️ Add the token here
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(formData),
     });

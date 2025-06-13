@@ -116,7 +116,7 @@ const ShiftOverview = () => {
     }
   };
 
-  // --- Delete shift ---
+  // Delete shift 
   const handleDeleteShift = async (id) => {
     if (!window.confirm('Er du sikker på, du vil slette denne vagt?')) return;
 
@@ -137,7 +137,7 @@ const ShiftOverview = () => {
     }
   };
 
-  // --- Create modal handlers ---
+  // Create modal handlers
   const openCreateModal = () => setShowCreateModal(true);
   const closeCreateModal = () => {
     setShowCreateModal(false);

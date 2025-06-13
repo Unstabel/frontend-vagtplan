@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useAuth } from '../AuthContext.jsx'
-import { useNavigate } from 'react-router-dom'  // <-- Importér useNavigate
+import { useNavigate } from 'react-router-dom'  
 
 export default function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const { login } = useAuth()
   const [error, setError] = useState(null)
-  const navigate = useNavigate()  // <-- Initialiser useNavigate
+  const navigate = useNavigate()  
 
   const handleSubmit = async (e) => {
   e.preventDefault()
@@ -28,13 +28,13 @@ export default function Login() {
 
     // Gem token og username lokalt
     localStorage.setItem('token', data.token)
-    localStorage.setItem('username', data.username) // ✅ Dette er vigtigt for næste side
+    localStorage.setItem('username', data.username)
 
     login({ username: data.username, role: data.role })
 
     // Naviger baseret på rolle
     if (data.role === 'ADMIN') {
-  navigate('/admin')  // OBS: Rette route path her!
+  navigate('/admin')
 } else if (data.role === 'USER') {
   navigate('/my-shifts')
 }
